@@ -23,7 +23,6 @@ describe Hotel::DateRange do
     before do
       start_date = Date.new(2017, 01, 01)
       end_date = start_date + 3
-
       @range = Hotel::DateRange.new(start_date, end_date)
     end
 

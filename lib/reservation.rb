@@ -1,11 +1,17 @@
 module Hotel
   class Reservation
-    # Feel free to change this method signature as needed. Make sure to update the tests!
+    attr_reader :date_range, :room
+    
+    #I 
     def initialize(start_date, end_date, room)
+      @date_range = DateRange.new(start_date, end_date)
+      @room = room
     end
 
+    #This method I want to get the total number of days and multiply it by 200.00
     def cost
-      return 3
+     total_cost = date_range.nights* 200
+      return total_cost
     end
   end
 end

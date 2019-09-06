@@ -1,14 +1,14 @@
 require_relative "spec_helper"
 
-describe Hotel::HotelController do
+describe Hotel::Concierge do
   before do
-    @hotel_controller = Hotel::HotelController.new
+    @concierge = Hotel::Concierge.new
     @date = Date.parse("2020-08-04")
   end
   describe "wave 1" do
     describe "rooms" do
       it "returns a list" do
-        rooms = @hotel_controller.rooms
+        rooms = @concierge.rooms
         expect(rooms).must_be_kind_of Array
       end
     end
@@ -17,7 +17,7 @@ describe Hotel::HotelController do
         start_date = @date
         end_date = start_date + 3
 
-        reservation = @hotel_controller.reserve_room(start_date, end_date)
+        reservation = @concierge.reserve_room(start_date, end_date)
 
         expect(reservation).must_be_kind_of Hotel::Reservation
       end
@@ -25,7 +25,7 @@ describe Hotel::HotelController do
 
     describe "reservations" do
       it "takes a Date and returns a list of Reservations" do
-        reservation_list = @hotel_controller.reservations(@date)
+        reservation_list = @concierge.reservations(@date)
 
         expect(reservation_list).must_be_kind_of Array
         reservation_list.each do |res|
@@ -41,7 +41,7 @@ describe Hotel::HotelController do
         start_date = @date
         end_date = start_date + 3
 
-        room_list = @hotel_controller.available_rooms(start_date, end_date)
+        room_list = @concierge.available_rooms(start_date, end_date)
 
         expect(room_list).must_be_kind_of Array
       end

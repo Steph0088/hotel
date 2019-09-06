@@ -82,7 +82,9 @@ Remember: Your job is to only build the classes that store information and handl
 #### User Stories
 
 - As a user of the hotel system...
-  - I can access the list of all of the rooms in the hotel
+  - I can access the list of all of the rooms in the hotel 
+      GIVEN the user is a front desk hotel worker
+      THEN create a method that allows them to get a list of all rooms in the hotel
   - I can make a reservation of a room for a given date range
   - I can access the list of reservations for a specific date, so that I can track reservations by date
   - I can get the total cost for a given reservation
