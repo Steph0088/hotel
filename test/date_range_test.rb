@@ -1,4 +1,4 @@
-require_relative "spec_helper"
+require_relative "test_helper"
 
 describe Hotel::DateRange do
   describe "consructor" do
@@ -7,7 +7,7 @@ describe Hotel::DateRange do
       end_date = start_date + 3
 
       range = Hotel::DateRange.new(start_date, end_date)
-
+      
       expect(range.start_date).must_equal start_date
       expect(range.end_date).must_equal end_date
     end
