@@ -19,7 +19,6 @@ describe Hotel::Concierge do
         start_date = @date
         end_date = start_date + 3
         @reservation = @concierge.reserve_room(start_date, end_date)
-
         expect(@reservation).must_be_kind_of Hotel::Reservation
       end
     end

@@ -14,6 +14,9 @@ module Hotel
         raise StandardError.new "No rooms available #{start_date} through #{end_date} "
       end
       res = Reservation.new(start_date, end_date, rooms.first)
+      # if res.start_date.instance_of?(Date) false && res.end_date.instance_of?(Date) false
+      #   raise StandardError.new "Invalid date"
+      # end
       @reservations << res
       # start_date and end_date should be instances of Date
       return res

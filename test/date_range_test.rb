@@ -5,9 +5,7 @@ describe Hotel::DateRange do
     it "Can be initialized with two dates" do
       start_date = Date.new(2017, 01, 01)
       end_date = start_date + 3
-      
       range = Hotel::DateRange.new(start_date, end_date)
-      
       expect(range.start_date).must_equal start_date
       expect(range.end_date).must_equal end_date
     end
@@ -41,22 +39,28 @@ describe Hotel::DateRange do
       expect(@range.overlap?(test_range)).must_equal true
     end
     
-    it "returns true for A contained range" do
+    xit "returns true for a contained range" do
       start_date = @range.start_date
       end_date = @range.end_date
       test_range = Hotel::DateRange.new(start_date, end_date)
-      expect(@range.include?(test_range)).must_equal true
+      expect(@range.include?(test_range.start_date)).must_equal true
+      expect(@range.include?(test_range.end_date)).must_equal true
     end
     
-    xit "returns true for a range that overlaps in front" do
+    xit "returns true for a range that overlaps after @range start_date " do
+      start_date = Date.new(2017,12,28)
+      end_date = Date.new(2017,01, 02)
+      test_range = Hotel::DateRange.new(start_date, end_date)
+      expect(@range.include?(test_range.end_date)).must_equal true
     end
     
     xit "returns true for a range that overlaps in the back" do
+      start_date = Date.new(2017 ,12 ,28)
+      end_date = Date.new(2017,03 ,08)
+      test_range = Hotel::DateRange.new(start_date, end_date)
+      expect(@range.include?(test_range.start_date)).must_equal true
     end
-    
-    xit "returns true for A containing range" do
-    end
-    
+  
     xit "returns false for  range starting on the end_date date" do
     end
     
