@@ -21,11 +21,6 @@ module Hotel
     
     def find_reservations(date)
       specific_date_reservations = []
-      #this method will return all reservations that are schedule on this date.
-      #so visualize a method that will have date = res and room , res and room , res and room , res and room
-      #loop through reservations array and find the ones that have the matching date.
-      # go to reservations and call on date range when looping through array if date matches date range then
-      #you would add that reservation to an array of rooms reserved on that day. 
       @reservations.each do |reservation|
         if reservation.date_range.include?(date)
           specific_date_reservations << reservation

@@ -41,7 +41,6 @@ describe Hotel::Concierge do
         end_date = start_date + 3
 
         room_list = @concierge.available_rooms(start_date, end_date)
-
         expect(room_list).must_be_kind_of Array
       end
     end
