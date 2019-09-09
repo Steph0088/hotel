@@ -60,8 +60,8 @@ describe Hotel::DateRange do
       test_range = Hotel::DateRange.new(start_date, end_date)
       expect(@range.include?(test_range.start_date)).must_equal true
     end
-  
-    xit "returns false for  range starting on the end_date date" do
+    
+    xit "returns false for range starting on the end_date date" do
     end
     
     xit "returns false for a range ending on the start_date date" do
@@ -86,7 +86,14 @@ describe Hotel::DateRange do
   end
   
   xdescribe "nights" do
+    start_date = Date.new(2017, 01, 01)
+    end_date = start_date + 3
+    @range = Hotel::DateRange.new(start_date, end_date)
+    
+    
     it "returns the correct number of nights" do
+      start_date - end_date
+      
     end
   end
 end
