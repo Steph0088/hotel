@@ -9,7 +9,6 @@ module Hotel
       @room = room
     end
 
-    #This method I want to get the total number of days and multiply it by 200.00
     def cost
      total_cost = date_range.nights * 200
       return total_cost
