@@ -43,13 +43,14 @@ describe Hotel::DateRange do
       test_range = Hotel::DateRange.new(start_date, end_date)
       expect(@range.overlap?(test_range)).must_equal false
     end
-
+#This test is not working fix it.!!!
     it "returns true for a range that overlaps with start date inside" do
       start_date = @range.start_date + 1
-      expect().must
+      expect(start_date).must_be > @range.end_date
       end_date = @range.end_date + 3
-      test_range
-
+      expect(end_date).must_be > @range.end_date
+      test_range = Hotel::DateRange.new(start_date, end_date)
+      expect(@range.overlap?(test_range)).must_equal true
     end
     
     xit "returns false for a range ending on the start_date date" do
@@ -103,10 +104,8 @@ describe Hotel::DateRange do
     end_date = start_date + 3
     @range = Hotel::DateRange.new(start_date, end_date)
     
-    
     it "returns the correct number of nights" do
       start_date - end_date
-      
     end
   end
 end

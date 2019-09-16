@@ -25,9 +25,11 @@ module Hotel
     def overlap?(other_range)
       if self.start_date == other_range.start_date && self.end_date == other_range.end_date
         return true
+      elsif other_range.start_date >= self.start_date && other_range.end_date >= end_date
+        return true
       else
         return false
-      end 
+      end
     end
     
     def nights
