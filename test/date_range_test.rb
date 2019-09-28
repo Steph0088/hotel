@@ -45,20 +45,25 @@ describe Hotel::DateRange do
     end
 
 
-#This test is not working fix it.!!!
+#This test is not working fix it.!!! Not sure if it works at this point.
     it "returns true for a range that overlaps with start date inside" do
       start_date = @range.start_date + 1
-      expect(start_date).must_be > @range.end_date
-      
-      
+      #changed the > sign to less than becuase I want start date in w/in the range
+      expect(start_date).must_be < @range.end_date
       end_date = @range.end_date + 3
       expect(end_date).must_be > @range.end_date
-      
+      # I don't know if I need tests range here : do I if it was created in before statement
       test_range = Hotel::DateRange.new(start_date, end_date)
       expect(@range.overlap?(test_range)).must_equal true
     end
     
     xit "returns false for a range ending on the start_date date" do
+      start_date = @range.start_date - 3
+      expect(start_date).must_be < @range.start_date
+      end_date = @range.start_date
+      expect(end_date).must_equal @range.start_date
+      test_range = Hotel::DateRange.new(start_date, end_date)
+      expect(@range.overlap?(test_range)).must_equal false
     end
     
     xit "returns false for a range completely before" do
