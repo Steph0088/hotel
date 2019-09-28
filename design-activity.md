@@ -81,3 +81,13 @@ For each class in your program, ask yourself the following questions:
   Is this class responsible for exactly one thing?
   Does this class take on any responsibility that should be delegated to "lower level" classes?
   Is there code in other classes that directly manipulates this class's instance variables?
+
+
+
+  DateRange: creates a date range given a start date and end-date and validates it, it also checks for overlap, and calculates total number of nights stayed. 
+
+  Reservation: using DateRange object it tally's the cost for a particular room. 
+
+  Concierge: Is in charge of making reservations for the first available given DateRange.
+
+  
